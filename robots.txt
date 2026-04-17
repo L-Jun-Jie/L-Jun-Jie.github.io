@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://L-Jun-Jie.github.io/sitemap.xml
