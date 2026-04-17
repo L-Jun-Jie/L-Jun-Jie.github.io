@@ -1,0 +1,93 @@
+cv:
+  name: Junjie Li
+  label: Ph.D. Student (Incoming)
+  email: junjieli2026@gmail.com
+  location: Changsha, Hunan, China
+  image: ""
+  summary: >
+    Incoming Ph.D. student at Hunan University (advisor: Prof. Yufeng Zhang), currently finishing an M.Sc. at Jilin University (advisor: Prof. Yong Lai).
+    Research interests include constraint solving, Satisfiability Modulo Theories (SMT), and formal methods.
+
+  social_networks:
+    - network: GitHub
+      username: L-Jun-Jie
+
+  sections:
+    Education:
+      - institution: Hunan University
+        location: Changsha, Hunan, China
+        url: https://www.hnu.edu.cn/
+        area: Electronic Information (电子信息)
+        studyType: Ph.D. (Incoming)
+        start_date: 2026-09
+        end_date: present
+        highlights:
+          - "Advisor: Prof. Yufeng Zhang (张羽丰)"
+          - Research focus: Constraint Solving, SMT
+
+      - institution: Jilin University
+        location: Changchun, Jilin, China
+        url: https://www.jlu.edu.cn/
+        area: Software Engineering
+        studyType: M.Sc.
+        start_date: 2023
+        end_date: 2026
+        highlights:
+          - "Advisor: Prof. Yong Lai (赖永)"
+          - Research focus: SMT Sampling, Constraint Solving
+          - "Published: SMT(LIA) Sampling with High Diversity (TACAS 2026)"
+
+      - institution: Shandong University of Technology
+        location: Zibo, Shandong, China
+        url: https://www.sdut.edu.cn/
+        area: Software Engineering
+        studyType: B.Eng.
+        start_date: 2018
+        end_date: 2022
+        highlights:
+          - Graduated with B.Eng. in Software Engineering
+
+    Publications:
+      - title: "SMT(LIA) Sampling with High Diversity"
+        authors:
+          - Yong Lai
+          - Junjie Li
+          - Chuan Luo
+        publisher: "Tools and Algorithms for the Construction and Analysis of Systems (TACAS 2026), Springer Nature Switzerland"
+        releaseDate: 2026
+        url: https://doi.org/10.1007/978-3-032-22752-2_10
+        summary: >
+          This paper addresses SMT sampling — generating diverse satisfying assignments for SMT(LIA) formulas —
+          with a novel approach that significantly improves solution-space coverage and diversity.
+
+    Skills:
+      - name: Formal Methods & Verification
+        level: Advanced
+        icon: fa-solid fa-check-double
+        keywords: "SMT, SAT, Constraint Solving, SMT Sampling, Program Verification"
+
+      - name: Programming Languages
+        level: Proficient
+        icon: fa-solid fa-code
+        keywords: "Python, C++, Java"
+
+      - name: Tools & Frameworks
+        level: Proficient
+        icon: fa-solid fa-wrench
+        keywords: "Z3, CVC5, MathSAT, LaTeX, Git"
+
+    Languages:
+      - name: Chinese (Mandarin)
+        summary: "Native speaker"
+
+      - name: English
+        summary: "Professional working proficiency"
+
+    Interests:
+      - name: Research
+        icon: fa-solid fa-microscope
+        keywords: "SMT Solving, Constraint Sampling, Formal Methods, Program Analysis"
+
+      - name: Hobbies
+        icon: fa-solid fa-heart
+        keywords: "Reading, Music, Traveling"
