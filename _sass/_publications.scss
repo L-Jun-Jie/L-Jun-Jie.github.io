@@ -38,6 +38,19 @@
 
     li {
       margin-bottom: 1rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--global-divider-color);
+      border-left: 3px solid var(--global-theme-color);
+      border-radius: 8px;
+      background-color: var(--global-card-bg-color);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .row {
+        align-items: flex-start;
+      }
 
       .preview {
         display: inline-block;
@@ -68,7 +81,20 @@
       }
 
       .title {
+        margin-bottom: 0.25rem;
+        font-size: 1.02rem;
         font-weight: bolder;
+        line-height: 1.35;
+      }
+
+      .author,
+      .periodical {
+        font-size: 0.93rem;
+        line-height: 1.45;
+      }
+
+      .periodical {
+        color: var(--global-text-color-light);
       }
 
       .author {
@@ -108,7 +134,11 @@
       }
 
       .links {
+        margin-top: 0.6rem;
+
         a.btn {
+          margin-right: 0.35rem;
+          margin-bottom: 0.35rem;
           color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
           padding-left: 1rem;
@@ -194,4 +224,21 @@
 .citation,
 .citation-number {
   color: var(--global-theme-color);
+}
+
+@media (max-width: 575px) {
+  .publications {
+    ol.bibliography {
+      li {
+        .abbr {
+          display: none;
+        }
+
+        .row > [class*="col-sm-"] {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
 }

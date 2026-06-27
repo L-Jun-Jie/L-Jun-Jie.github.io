@@ -496,11 +496,25 @@ ul.task-list input[type="checkbox"] {
 @media (max-width: 575px) {
   .about-page {
     .about-intro {
-      display: block;
+      display: grid;
+      grid-template-columns: 1fr;
     }
 
     .profile {
-      margin-top: 1.25rem;
+      order: 2;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-intro-content {
+      display: contents;
+
+      > .post-header {
+        order: 1;
+      }
+
+      > :not(.post-header) {
+        order: 3;
+      }
     }
 
     .home-news {

@@ -24,12 +24,12 @@ cv:
       - institution: Hunan University
         location: Changsha, Hunan, China
         url: https://www.hnu.edu.cn/
-        area: Electronic Information (电子信息)
+        area: Electronic Information
         studyType: Ph.D. (Incoming)
         start_date: 2026-09
         end_date: present
         highlights:
-          - "Advisor: Prof. Yufeng Zhang (张羽丰)"
+          - "Advisor: Prof. Yufeng Zhang"
           - "Research focus: Constraint Solving, SMT"
 
       - institution: Jilin University
@@ -40,7 +40,7 @@ cv:
         start_date: 2023
         end_date: 2026
         highlights:
-          - "Advisor: Associate Prof. Yong Lai (赖永)"
+          - "Advisor: Associate Prof. Yong Lai"
           - "Research focus: SMT Sampling, Constraint Solving"
           - "Published: SMT(LIA) Sampling with High Diversity (TACAS 2026)"
 
