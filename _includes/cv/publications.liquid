@@ -9,6 +9,31 @@
         {% capture pub_date %}
           {% if entry.releaseDate %}{{ entry.releaseDate }}{% elsif entry.date %}{{ entry.date }}{% endif %}
         {% endcapture %}
+        {% capture author_line %}
+          {% if entry.authors %}
+            {% assign self_name = site.first_name | append: ' ' | append: site.last_name %}
+            {%- for author in entry.authors -%}
+              {% assign author_name = author.name | default: author | strip %}
+              {%- unless forloop.first -%}
+                {%- if forloop.last and forloop.length == 2 -%}
+                  {{ ' and ' }}
+                {%- elsif forloop.last -%}
+                  {{ ', and ' }}
+                {%- else -%}
+                  {{ ', ' }}
+                {%- endif -%}
+              {%- endunless -%}
+              {% if author_name == self_name %}
+                <strong><u>{{ author_name }}</u></strong>
+              {% else %}
+                {{ author_name }}
+              {% endif %}
+            {%- endfor -%}
+          {% elsif entry.author %}
+            {{ entry.author }}
+          {% endif %}
+        {% endcapture %}
+        {% assign author_line = author_line | strip %}
 
         {% if pub_date != '' %}
           <div class="col-xs-2 col-sm-2 col-md-2 text-center">
@@ -33,10 +58,24 @@
               <h6 class="title font-weight-bold ml-1 ml-md-4">{{ entry.title }}</h6>
             {% endif %}
 
+            {% if author_line != '' %}
+              <div class="author ml-1 ml-md-4">{{ author_line }}</div>
+            {% endif %}
+
             {% if entry.publisher %}
               <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
                 <em>{{ entry.publisher }}</em>
               </h6>
+            {% endif %}
+
+            {% if entry.note %}
+              <div class="publication-note ml-1 ml-md-4">{{ entry.note | strip }}</div>
+            {% endif %}
+
+            {% if entry.code %}
+              <div class="links ml-1 ml-md-4 mt-2">
+                <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Code</a>
+              </div>
             {% endif %}
 
             {% if entry.summary %}
@@ -53,10 +92,24 @@
               <h6 class="title font-weight-bold ml-1 ml-md-4">{{ entry.title }}</h6>
             {% endif %}
 
+            {% if author_line != '' %}
+              <div class="author ml-1 ml-md-4">{{ author_line }}</div>
+            {% endif %}
+
             {% if entry.publisher %}
               <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
                 <em>{{ entry.publisher }}</em>
               </h6>
+            {% endif %}
+
+            {% if entry.note %}
+              <div class="publication-note ml-1 ml-md-4">{{ entry.note | strip }}</div>
+            {% endif %}
+
+            {% if entry.code %}
+              <div class="links ml-1 ml-md-4 mt-2">
+                <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Code</a>
+              </div>
             {% endif %}
 
             {% if entry.summary %}

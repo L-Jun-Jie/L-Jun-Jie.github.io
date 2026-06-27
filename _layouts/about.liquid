@@ -1,67 +1,126 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
-
+<div class="post about-page">
   <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
+    <div class="about-intro {% unless page.profile %}about-intro-full{% endunless %}">
+      <div class="about-intro-content">
+        <header class="post-header">
+          <h1 class="post-title">
+            {% if site.title == 'blank' %}
+              <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+              {{ site.last_name }}
+            {% else %}
+              {{ site.title }}
+            {% endif %}
+          </h1>
+          <p class="desc">{{ page.subtitle }}</p>
+        </header>
 
-    <div class="clearfix">{{ content }}</div>
+        {{ content }}
+      </div>
+
+      {% if page.profile %}
+        <aside class="profile">
+          {% if page.profile.image %}
+            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+            {% if page.profile.image_circular %}
+              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+            {% else %}
+              {% assign profile_image_class = 'img-fluid z-depth-1
+        rounded' %}
+            {% endif %}
+            {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+        30vw, 95vw"{% endcapture %}
+            {%
+              include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+              cache_bust=true
+            %}
+          {% endif %}
+          <div class="profile-social-icons" aria-label="Profile links">
+            {% if site.data.socials.email %}
+              <a href="mailto:{{ site.data.socials.email }}" aria-label="Email" title="Email" data-toggle="tooltip">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            {% endif %}
+            {% if site.data.socials.github_username %}
+              <a
+                href="https://github.com/{{ site.data.socials.github_username }}"
+                aria-label="GitHub"
+                title="GitHub"
+                data-toggle="tooltip"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+            {% endif %}
+            {% if site.data.socials.scholar_userid %}
+              <a
+                href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}"
+                aria-label="Google Scholar"
+                title="Google Scholar"
+                data-toggle="tooltip"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="ai ai-google-scholar"></i>
+              </a>
+            {% endif %}
+            {% if site.data.socials.orcid_id %}
+              <a
+                href="https://orcid.org/{{ site.data.socials.orcid_id }}"
+                aria-label="ORCID"
+                title="ORCID"
+                data-toggle="tooltip"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="ai ai-orcid"></i>
+              </a>
+            {% endif %}
+          </div>
+          {% if page.profile.more_info %}
+            <div class="more-info">{{ page.profile.more_info }}</div>
+          {% endif %}
+        </aside>
+      {% endif %}
+    </div>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
+      <section class="home-section home-news">
+        <div class="home-section-header">
+          <h2>
+            <a href="{{ '/news/' | relative_url }}">News</a>
+          </h2>
+        </div>
+        {% include news.liquid limit=true %}
+      </section>
     {% endif %}
 
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
+      <section class="home-section home-posts">
+        <div class="home-section-header">
+          <h2>
+            <a href="{{ '/blog/' | relative_url }}">Latest Posts</a>
+          </h2>
+        </div>
+        {% include latest_posts.liquid %}
+      </section>
     {% endif %}
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
+      <section class="home-section home-publications">
+        <div class="home-section-header">
+          <h2>
+            <a href="{{ '/publications/' | relative_url }}">Selected Publications</a>
+          </h2>
+        </div>
+        {% include selected_papers.liquid %}
+      </section>
     {% endif %}
 
     <!-- Social -->

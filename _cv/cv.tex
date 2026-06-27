@@ -1,0 +1,136 @@
+\documentclass[11pt,a4paper,roman]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\nopagenumbers{}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome5}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage[scale=0.86]{geometry}
+\usepackage{multicol}
+\usepackage{import}
+\setlist[itemize]{leftmargin=1.2em,noitemsep,topsep=0.15em,parsep=0pt,partopsep=0pt}
+
+\name{Junjie}{Li}
+\title{Curriculum Vitae}
+
+\newcommand*{\customcventry}[7][.25em]{
+  \begin{tabular}{@{}l}
+    {\bfseries #4}
+  \end{tabular}
+  \hfill
+  \begin{tabular}{l@{}}
+    {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l}
+    {\itshape #3}
+  \end{tabular}
+  \hfill
+  \begin{tabular}{l@{}}
+    {\itshape #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+  \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\newcommand*{\customcvproject}[4][.25em]{
+  \begin{tabular}{@{}l}
+    {\bfseries #2}
+  \end{tabular}
+  \hfill
+  \begin{tabular}{l@{}}
+    {\itshape #3}
+  \end{tabular}
+  \ifx&#4&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#4%
+  \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\setlength{\tabcolsep}{12pt}
+\begin{document}
+\makecvtitle
+\vspace*{-16mm}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{c}
+{\small \faGithub\enspace \href{https://github.com/L-Jun-Jie}{github.com/L-Jun-Jie} \quad\textbar\quad \faGraduationCap\enspace \href{https://scholar.google.com/citations?user=O5yFs3gAAAAJ}{Google Scholar} \quad\textbar\quad \href{https://orcid.org/0009-0005-3751-9281}{ORCID}}\\
+{\small \faEnvelope\enspace \href{mailto:junjieli2026@gmail.com}{junjieli2026@gmail.com} \quad\textbar\quad \faMapMarker*\enspace Changsha, Hunan, China}\\
+\end{tabular}
+\end{center}
+\vspace*{-2.5mm}
+
+\section{RESEARCH INTERESTS}
+SMT Solving, Constraint Sampling, Formal Methods, Program Analysis
+
+\section{EDUCATION}
+\noindent\begin{tabularx}{\linewidth}{@{}Xr@{}}
+\textcolor{color1}{\bfseries \href{https://www.hnu.edu.cn/}{- Hunan University}} & {\bfseries Changsha, Hunan, China}\\[-0.1em]
+{\itshape Ph.D. (Incoming), Electronic Information} & {\itshape 2026-09 -- Present}
+\end{tabularx}
+{\small Advisor: Prof. Yufeng Zhang}
+\par\vspace{0.75em}
+\noindent\begin{tabularx}{\linewidth}{@{}Xr@{}}
+\textcolor{color1}{\bfseries \href{https://www.jlu.edu.cn/}{- Jilin University}} & {\bfseries Changchun, Jilin, China}\\[-0.1em]
+{\itshape M.Sc., Software Engineering} & {\itshape 2023 -- 2026}
+\end{tabularx}
+{\small Advisor: Associate Prof. Yong Lai}
+\par\vspace{0.75em}
+\noindent\begin{tabularx}{\linewidth}{@{}Xr@{}}
+\textcolor{color1}{\bfseries \href{https://www.sdut.edu.cn/}{- Shandong University of Technology}} & {\bfseries Zibo, Shandong, China}\\[-0.1em]
+{\itshape B.Eng., Software Engineering} & {\itshape 2018 -- 2022}
+\end{tabularx}
+\par\vspace{0.75em}
+
+\section{PUBLICATIONS}
+\noindent\begin{tabularx}{\linewidth}{@{}Xr@{}}
+\textcolor{color1}{\bfseries SMT(LIA) Sampling with High Diversity \href{https://doi.org/10.1007/978-3-032-22752-2_10}{[paper]} \href{https://github.com/laigroup/HighDiv}{[code]}} & {\itshape 2026}
+\end{tabularx}
+{\small Yong Lai, \textbf{\underline{Junjie Li}}, and Chuan Luo}\\[-0.15em]
+\emph{Tools and Algorithms for the Construction and Analysis of Systems (TACAS 2026)}\\[-0.15em]
+{\small\itshape The author list has been sorted alphabetically by last name.}
+\par\vspace{0.75em}
+
+\section{PROJECTS}
+\noindent\begin{tabularx}{\linewidth}{@{}Xr@{}}
+\textcolor{color1}{\bfseries HighDiv \href{https://github.com/laigroup/HighDiv}{[code]}} & {\itshape 2023 -- Present}
+\end{tabularx}
+{\small An SMT(LIA) sampler for high-diversity solutions.}
+\begin{itemize}
+  \item Integrates CDCL(T) with local search for high-diversity SMT(LIA) sampling.
+  \item Introduces a boundary-aware move operator to balance scalability and randomness.
+\end{itemize}
+\par\vspace{0.75em}
+\noindent\begin{tabularx}{\linewidth}{@{}Xr@{}}
+\textcolor{color1}{\bfseries EDA Sampling \href{https://github.com/laigroup/EDA_Sampling}{[code]}} & {\itshape 2023 -- 2024}
+\end{tabularx}
+{\small A BDD-based sampling tool for SystemVerilog constraints.}
+\begin{itemize}
+  \item Builds BDDs for SystemVerilog constraints and samples satisfying assignments from the resulting solution space.
+\end{itemize}
+\par\vspace{0.75em}
+
+\section{SKILLS AND TOOLS}
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Formal Methods \& Verification\ & SMT, Program Verification \\
+Programming Languages\ & Python, C++ \\
+Tools \& Frameworks\ & Z3, Bitwuzla, KLEE \\
+\end{tabular}
+
+\section{LANGUAGES}
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Chinese (Mandarin)\ & Native speaker \\
+English\ & College English Test Band 6 (CET-6) \\
+\end{tabular}
+
+\section{INTERESTS}
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Hobbies\ & Reading, Music, Traveling \\
+\end{tabular}
+\end{document}

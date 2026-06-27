@@ -5,12 +5,19 @@ cv:
   location: Changsha, Hunan, China
   image: ""
   summary: >
-    Incoming Ph.D. student at Hunan University (advisor: Prof. Yufeng Zhang), currently finishing an M.Sc. at Jilin University (advisor: Prof. Yong Lai).
+    Incoming Ph.D. student at Hunan University (advisor: Prof. Yufeng Zhang), currently finishing an M.Sc. at Jilin University (advisor: Associate Prof. Yong Lai).
     Research interests include constraint solving, Satisfiability Modulo Theories (SMT), and formal methods.
 
   social_networks:
     - network: GitHub
       username: L-Jun-Jie
+      url: https://github.com/L-Jun-Jie
+    - network: Google Scholar
+      username: O5yFs3gAAAAJ
+      url: https://scholar.google.com/citations?user=O5yFs3gAAAAJ
+    - network: ORCID
+      username: 0009-0005-3751-9281
+      url: https://orcid.org/0009-0005-3751-9281
 
   sections:
     Education:
@@ -23,7 +30,7 @@ cv:
         end_date: present
         highlights:
           - "Advisor: Prof. Yufeng Zhang (张羽丰)"
-          - Research focus: Constraint Solving, SMT
+          - "Research focus: Constraint Solving, SMT"
 
       - institution: Jilin University
         location: Changchun, Jilin, China
@@ -33,8 +40,8 @@ cv:
         start_date: 2023
         end_date: 2026
         highlights:
-          - "Advisor: Prof. Yong Lai (赖永)"
-          - Research focus: SMT Sampling, Constraint Solving
+          - "Advisor: Associate Prof. Yong Lai (赖永)"
+          - "Research focus: SMT Sampling, Constraint Solving"
           - "Published: SMT(LIA) Sampling with High Diversity (TACAS 2026)"
 
       - institution: Shandong University of Technology
@@ -53,35 +60,52 @@ cv:
           - Yong Lai
           - Junjie Li
           - Chuan Luo
-        publisher: "Tools and Algorithms for the Construction and Analysis of Systems (TACAS 2026), Springer Nature Switzerland"
+        publisher: "Tools and Algorithms for the Construction and Analysis of Systems (TACAS 2026)"
         releaseDate: 2026
         url: https://doi.org/10.1007/978-3-032-22752-2_10
-        summary: >
-          This paper addresses SMT sampling — generating diverse satisfying assignments for SMT(LIA) formulas —
-          with a novel approach that significantly improves solution-space coverage and diversity.
+        code: https://github.com/laigroup/HighDiv
+        note: "The author list has been sorted alphabetically by last name."
+
+    Projects:
+      - name: HighDiv
+        url: https://github.com/laigroup/HighDiv
+        start_date: 2023
+        end_date: present
+        summary: "An SMT(LIA) sampler for high-diversity solutions."
+        highlights:
+          - "Integrates CDCL(T) with local search for high-diversity SMT(LIA) sampling."
+          - "Introduces a boundary-aware move operator to balance scalability and randomness."
+
+      - name: EDA Sampling
+        url: https://github.com/laigroup/EDA_Sampling
+        start_date: 2023
+        end_date: 2024
+        summary: "A BDD-based sampling tool for SystemVerilog constraints."
+        highlights:
+          - "Builds BDDs for SystemVerilog constraints and samples satisfying assignments from the resulting solution space."
 
     Skills:
       - name: Formal Methods & Verification
         level: Advanced
         icon: fa-solid fa-check-double
-        keywords: "SMT, SAT, Constraint Solving, SMT Sampling, Program Verification"
+        keywords: "SMT, Program Verification"
 
       - name: Programming Languages
         level: Proficient
         icon: fa-solid fa-code
-        keywords: "Python, C++, Java"
+        keywords: "Python, C++"
 
       - name: Tools & Frameworks
         level: Proficient
         icon: fa-solid fa-wrench
-        keywords: "Z3, CVC5, MathSAT, LaTeX, Git"
+        keywords: "Z3, Bitwuzla, KLEE"
 
     Languages:
       - name: Chinese (Mandarin)
         summary: "Native speaker"
 
       - name: English
-        summary: "Professional working proficiency"
+        summary: "College English Test Band 6 (CET-6)"
 
     Interests:
       - name: Research

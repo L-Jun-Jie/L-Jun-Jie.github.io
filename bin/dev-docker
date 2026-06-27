@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+IMAGE="${IMAGE:-amirpourmand/al-folio:v0.16.3}"
+PORT="${PORT:-8080}"
+LIVERELOAD_PORT="${LIVERELOAD_PORT:-35729}"
+PROXY_URL="${PROXY_URL:-http://127.0.0.1:18780}"
+
+cd "$(dirname "$0")/.."
+
+docker_args=(
+  --rm
+  --network host
+  -u "$(id -u):$(id -g)"
+  -e HOME=/tmp
+  -e BUNDLE_PATH=vendor/bundle
+  -e BUNDLE_APP_CONFIG=.bundle
+  -e JEKYLL_ENV=development
+  -v "$PWD:/srv/jekyll"
+  -w /srv/jekyll
+)
+
+if [[ -n "$PROXY_URL" ]]; then
+  docker_args+=(
+    -e HTTP_PROXY="$PROXY_URL"
+    -e HTTPS_PROXY="$PROXY_URL"
+    -e http_proxy="$PROXY_URL"
+    -e https_proxy="$PROXY_URL"
+  )
+fi
+
+exec sudo docker run "${docker_args[@]}" "$IMAGE" bash -lc "
+  bundle check || bundle install
+  bundle exec jekyll serve \
+    --watch \
+    --port=$PORT \
+    --host=0.0.0.0 \
+    --livereload \
+    --livereload-port=$LIVERELOAD_PORT \
+    --force_polling \
+    --trace
+"

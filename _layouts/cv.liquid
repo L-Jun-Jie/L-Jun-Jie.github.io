@@ -18,15 +18,21 @@ layout: default
     <h1 class="post-title">
       {{ page.title }}
       {% if page.cv_pdf %}
+        {% assign cv_pdf_link = page.cv_pdf %}
+        {% if page.cv_pdf_preview %}
+          {% assign cv_pdf_link = page.cv_pdf_preview %}
+        {% endif %}
         <a
-          {% if page.cv_pdf contains '://' %}
-            href="{{ page.cv_pdf }}"
+          {% if cv_pdf_link contains '://' %}
+            href="{{ cv_pdf_link }}"
           {% else %}
-            href="{{ page.cv_pdf | relative_url }}"
+            href="{{ cv_pdf_link | relative_url }}"
           {% endif %}
           target="_blank"
           rel="noopener noreferrer"
           class="float-right"
+          aria-label="Preview CV PDF"
+          title="Preview CV PDF"
         >
           <i class="fa-solid fa-file-pdf"></i>
         </a>
@@ -105,6 +111,21 @@ layout: default
                   <td class="p-1 pr-2 font-weight-bold"><b>Website</b></td>
                   <td class="p-1 pl-2 font-weight-light">
                     <a href="{{ cv.website }}" target="_blank">{{ cv.website }}</a>
+                  </td>
+                </tr>
+              {% endif %}
+              {% if cv.social_networks %}
+                <tr>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Profiles</b></td>
+                  <td class="p-1 pl-2 font-weight-light">
+                    {% for social in cv.social_networks %}
+                      {% if social.url %}
+                        <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer">{{ social.network }}</a>
+                      {% else %}
+                        {{ social.network }}: {{ social.username }}
+                      {% endif %}
+                      {% unless forloop.last %}&nbsp;&middot;&nbsp;{% endunless %}
+                    {% endfor %}
                   </td>
                 </tr>
               {% endif %}

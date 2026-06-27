@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started my M.Sc. in Software Engineering at **Jilin University**, joining Prof. Yong Lai's group to work on constraint solving and SMT.
+Started my M.Sc. in Software Engineering at **Jilin University**, joining Associate Prof. Yong Lai's group to work on constraint solving and SMT.

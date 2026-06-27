@@ -8,10 +8,9 @@ subtitle: >
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: me.jpg
   image_circular: false
   more_info: >
-    <p>📧 <a href="mailto:junjieli2026@gmail.com">junjieli2026@gmail.com</a></p>
     <p>Changsha, Hunan, China</p>
     <p>(Starting Sep 2026)</p>
 
@@ -24,37 +23,20 @@ announcements:
   limit: 5
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: true
   limit: 3
 ---
 
-I am **Junjie Li (李浚杰)**, an incoming Ph.D. student at [Hunan University](https://www.hnu.edu.cn/), where I will be advised by Prof. Yufeng Zhang. I am currently completing my Master's degree in Software Engineering at [Jilin University](https://www.jlu.edu.cn/), under the supervision of Prof. [Yong Lai](https://ccst.jlu.edu.cn/info/1026/4492.htm).
+I am **Junjie Li (李浚杰)**, an incoming Ph.D. student at [Hunan University](https://www.hnu.edu.cn/), where I will be advised by Prof. [Yufeng Zhang](https://csee.hnu.edu.cn/people/zhangyufeng). I am currently completing my Master's degree in Software Engineering at [Jilin University](https://www.jlu.edu.cn/), under the supervision of Associate Prof. [Yong Lai](https://ccst.jlu.edu.cn/info/1026/4492.htm).
 
-My research lies at the intersection of **constraint solving** and **formal methods**, with a particular focus on **Satisfiability Modulo Theories (SMT)**. I am especially interested in SMT sampling — generating diverse, high-coverage sets of satisfying assignments for logical formulas — and its applications in software verification, testing, and analysis.
+My research focuses on **Satisfiability Modulo Theories (SMT)** and **program analysis**, with interests in their applications to software verification and testing.
 
 I received my B.Eng. in Software Engineering from [Shandong University of Technology](https://www.sdut.edu.cn/) in 2022.
 
 ---
 
-### Research Interests
+**Research Interests**
 
-- **Satisfiability Modulo Theories (SMT)**: sampling, solving, and diversity
-- **Constraint Solving**: SAT, SMT, and combinatorial optimization
-- **Formal Methods**: program verification and analysis
-
----
-
-### Selected Publications
-
-See the [Publications](/publications/) page for a full list.
-
----
-
-### Beyond Research
-
-Outside of academia, I enjoy **reading**, **music**, and **traveling** — a good book, a well-curated playlist, or an unfamiliar city can be just as thought-provoking as a research problem.
-
----
-
-> _"The purpose of computing is insight, not numbers."_ — Richard Hamming
+- **Satisfiability Modulo Theories (SMT)**
+- **Program Analysis**

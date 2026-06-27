@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Junjie Li's Website
+title: Junjie Li
 first_name: Junjie
 # middle_name: RO
 last_name: Li
@@ -12,13 +12,10 @@ contact_note: >
   Feel free to reach out via email — I am always happy to discuss research or collaboration.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal academic website of Junjie Li (李浚杰), PhD student at Hunan University. Research interests: constraint solving, Satisfiability Modulo Theories (SMT).
-footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+footer_text:
 keywords: constraint solving, SMT, satisfiability modulo theories, formal methods, academic website
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: favicon.svg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://L-Jun-Jie.github.io # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -57,7 +54,7 @@ external_services:
 
 navbar_fixed: true
 footer_fixed: true
-search_enabled: true
+search_enabled: false
 socials_in_search: true
 posts_in_search: true
 bib_search: true
@@ -165,7 +162,7 @@ collections:
   projects:
     output: true
   teachings:
-    output: true
+    output: false
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
@@ -281,8 +278,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Li]
+  first_name: [Junjie]
 
   style: apa
   locale: en
@@ -463,7 +460,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
+      fonts: "https://fonts.googleapis.com/css?family=Inter:400,500,600,700|Source+Serif+4:600,700|Material+Icons&display=swap"
   highlightjs:
     integrity:
       css:

@@ -40,8 +40,8 @@
         <span class="icon-bar bottom-bar"></span>
       </button>
 
-      <div class="collapse navbar-collapse text-right" id="navbarNav">
-        <ul class="navbar-nav ml-auto flex-nowrap">
+      <div class="collapse navbar-collapse text-right text-sm-center" id="navbarNav">
+        <ul class="navbar-nav flex-nowrap">
           {% for page in site.pages %}
             {% if page.permalink == '/' %} {% assign about_title = page.title %} {% endif %}
           {% endfor %}
@@ -49,7 +49,12 @@
           <!-- About -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
             <a class="nav-link" href="{{ '/' | relative_url }}">
-              {{- about_title }}
+              {% assign about_title_upcase = about_title | upcase %}
+              {% if about_title == about_title_upcase %}
+                {{- about_title -}}
+              {% else %}
+                {{- about_title | capitalize -}}
+              {% endif %}
               {% if page.permalink == '/' %}
                 <span class="sr-only">(current)</span>
               {% endif %}
@@ -77,7 +82,13 @@
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    {{- p.title }}
+                    {% assign nav_title = p.title %}
+                    {% assign nav_title_upcase = nav_title | upcase %}
+                    {% if nav_title == nav_title_upcase %}
+                      {{- nav_title -}}
+                    {% else %}
+                      {{- nav_title | capitalize -}}
+                    {% endif %}
                     {% if page.title == p.title or has_active_child %}
                       <span class="sr-only">(current)</span>
                     {% endif %}
@@ -91,7 +102,13 @@
                           class="dropdown-item {% if page.title == child.title %}active{% endif %}"
                           href="{% if child.permalink contains '://' %}{{ child.permalink }}{% else %}{{ child.permalink | relative_url }}{% endif %}"
                         >
-                          {{- child.title -}}
+                          {% assign child_title = child.title %}
+                          {% assign child_title_upcase = child_title | upcase %}
+                          {% if child_title == child_title_upcase %}
+                            {{- child_title -}}
+                          {% else %}
+                            {{- child_title | capitalize -}}
+                          {% endif %}
                         </a>
                       {% endif %}
                     {% endfor %}
@@ -108,7 +125,13 @@
                     {%- assign url = p.url -%}
                   {%- endif %}
                   <a class="nav-link" href="{{ url | relative_url }}">
-                    {{- p.title }}
+                    {% assign nav_title = p.title %}
+                    {% assign nav_title_upcase = nav_title | upcase %}
+                    {% if nav_title == nav_title_upcase %}
+                      {{- nav_title -}}
+                    {% else %}
+                      {{- nav_title | capitalize -}}
+                    {% endif %}
                     {% if page.url contains p.url %}
                       <span class="sr-only">(current)</span>
                     {% endif %}
@@ -117,14 +140,6 @@
               {% endif %}
             {% endif %}
           {% endfor %}
-          {% if site.search_enabled %}
-            <!-- Search -->
-            <li class="nav-item">
-              <button id="search-toggle" title="Search" onclick="openSearchModal()">
-                <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span>
-              </button>
-            </li>
-          {% endif %}
           {% if site.enable_darkmode %}
             <!-- Toogle theme mode -->
             <li class="toggle-container">

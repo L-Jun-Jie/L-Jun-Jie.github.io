@@ -83,6 +83,7 @@
 
         > em {
           border-bottom: 1px solid;
+          font-weight: 700;
           font-style: normal;
         }
 
@@ -96,6 +97,14 @@
             border-bottom: 1px dashed var(--global-text-color);
           }
         }
+      }
+
+      .publication-note {
+        margin-top: 0.25rem;
+        color: var(--global-text-color-light);
+        font-size: 0.86rem;
+        font-style: italic;
+        line-height: 1.35;
       }
 
       .links {

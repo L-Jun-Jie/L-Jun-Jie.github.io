@@ -173,6 +173,27 @@
 }
 
 @media (min-width: 576px) {
+  .navbar .container {
+    position: relative;
+    justify-content: center;
+  }
+
+  .navbar .navbar-brand.title,
+  .navbar .navbar-brand.social {
+    position: absolute;
+    left: 15px;
+  }
+
+  .navbar .navbar-collapse {
+    flex-grow: 0;
+    justify-content: center;
+  }
+
+  .navbar .navbar-nav {
+    align-items: center;
+    justify-content: center;
+  }
+
   #light-toggle {
     transform: translateY(4px);
   }
