@@ -28,7 +28,7 @@ latest_posts:
   limit: 3
 ---
 
-I am **Junjie Li (李浚杰)**, an incoming Ph.D. student at [Hunan University](https://www.hnu.edu.cn/), where I will be advised by Prof. [Yufeng Zhang](https://csee.hnu.edu.cn/people/zhangyufeng). I am currently completing my Master's degree in Software Engineering at [Jilin University](https://www.jlu.edu.cn/), under the supervision of Associate Prof. [Yong Lai](https://ccst.jlu.edu.cn/info/1026/4492.htm).
+I am **Junjie Li (李浚杰)**, an incoming Ph.D. student at [Hunan University](https://www.hnu.edu.cn/), where I will be advised by Prof. [Yufeng Zhang](https://csee.hnu.edu.cn/people/zhangyufeng). I am currently completing my Master's degree in Software Engineering at [Jilin University](https://www.jlu.edu.cn/), under the supervision of Associate Prof. [Yong Lai](https://ccst.jlu.edu.cn/info/1028/19286.htm).
 
 My research focuses on **Satisfiability Modulo Theories (SMT)** and **program analysis**, with interests in their applications to software verification and testing.
 

@@ -24,16 +24,16 @@ table.table-cv {
 }
 
 a.btncv {
+  display: inline-block;
+  margin-right: 0.35rem;
+  margin-bottom: 0.35rem;
   color: var(--global-text-color) !important;
   border: 1px solid var(--global-text-color) !important;
   border-radius: 0.125rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding: 0.15rem 0.55rem;
   text-decoration: none;
   font-weight: 400;
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   text-align: center;
   vertical-align: middle;
   text-transform: uppercase;

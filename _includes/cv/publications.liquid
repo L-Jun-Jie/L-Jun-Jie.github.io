@@ -72,9 +72,14 @@
               <div class="publication-note ml-1 ml-md-4">{{ entry.note | strip }}</div>
             {% endif %}
 
-            {% if entry.code %}
+            {% if entry.url or entry.code %}
               <div class="links ml-1 ml-md-4 mt-2">
-                <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Code</a>
+                {% if entry.url %}
+                  <a href="{{ entry.url }}" class="btncv" role="button" target="_blank" rel="noopener noreferrer">Paper</a>
+                {% endif %}
+                {% if entry.code %}
+                  <a href="{{ entry.code }}" class="btncv" role="button" target="_blank" rel="noopener noreferrer">Code</a>
+                {% endif %}
               </div>
             {% endif %}
 
@@ -106,9 +111,14 @@
               <div class="publication-note ml-1 ml-md-4">{{ entry.note | strip }}</div>
             {% endif %}
 
-            {% if entry.code %}
+            {% if entry.url or entry.code %}
               <div class="links ml-1 ml-md-4 mt-2">
-                <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Code</a>
+                {% if entry.url %}
+                  <a href="{{ entry.url }}" class="btncv" role="button" target="_blank" rel="noopener noreferrer">Paper</a>
+                {% endif %}
+                {% if entry.code %}
+                  <a href="{{ entry.code }}" class="btncv" role="button" target="_blank" rel="noopener noreferrer">Code</a>
+                {% endif %}
               </div>
             {% endif %}
 
