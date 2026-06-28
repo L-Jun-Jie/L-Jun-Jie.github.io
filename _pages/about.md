@@ -22,21 +22,20 @@ announcements:
   scrollable: true
   limit: 5
 
-latest_posts:
-  enabled: false
-  scrollable: true
-  limit: 3
 ---
 
 I am **Junjie Li (李浚杰)**, an incoming Ph.D. student at [Hunan University](https://www.hnu.edu.cn/), where I will be advised by Prof. [Yufeng Zhang](https://csee.hnu.edu.cn/people/zhangyufeng). I am currently completing my Master's degree in Software Engineering at [Jilin University](https://www.jlu.edu.cn/), under the supervision of Associate Prof. [Yong Lai](https://ccst.jlu.edu.cn/info/1028/19286.htm).
 
-My research focuses on **Satisfiability Modulo Theories (SMT)** and **program analysis**, with interests in their applications to software verification and testing.
+My work lies at the intersection of formal methods and software engineering, with a focus on building practical techniques for software verification and testing.
 
 I received my B.Eng. in Software Engineering from [Shandong University of Technology](https://www.sdut.edu.cn/) in 2022.
 
----
+<section class="about-research-interests">
+  <h2>Research Interests</h2>
+  <ul>
+    <li><strong>Satisfiability Modulo Theories (SMT)</strong></li>
+    <li><strong>Program Analysis</strong></li>
+  </ul>
+</section>
 
-**Research Interests**
-
-- **Satisfiability Modulo Theories (SMT)**
-- **Program Analysis**
+<p class="collaboration-note"><strong>I am open to academic collaborations and industry opportunities.</strong> Please feel free to get in touch to discuss potential cooperation.</p>
