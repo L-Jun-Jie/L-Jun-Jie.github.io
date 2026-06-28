@@ -316,27 +316,41 @@ ul.task-list input[type="checkbox"] {
 
 .project-list {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
+}
+
+.project-year-group {
+  padding-top: 1rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.project-year {
+  margin: 0 0 0.85rem;
+  color: var(--global-divider-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: right;
 }
 
 .project-list-item {
   display: flex;
-  gap: 1.25rem;
+  gap: 0.9rem;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 1rem 1.1rem;
+  padding: 0.68rem 0.85rem;
   border: 1px solid var(--global-divider-color);
-  border-left: 3px solid var(--global-theme-color);
-  border-radius: 8px;
+  border-left: 2px solid var(--global-theme-color);
+  border-radius: 6px;
   background-color: var(--global-card-bg-color);
 }
 
 .project-list-main {
   min-width: 0;
 
-  h2 {
-    margin: 0 0 0.35rem;
-    font-size: 1.1rem;
+  h3 {
+    margin: 0 0 0.22rem;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 1.3;
   }
@@ -344,7 +358,8 @@ ul.task-list input[type="checkbox"] {
   p {
     margin: 0;
     color: var(--global-text-color-light);
-    line-height: 1.5;
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
 }
 
@@ -359,11 +374,11 @@ ul.task-list input[type="checkbox"] {
     display: inline-flex;
     gap: 0.35rem;
     align-items: center;
-    padding: 0.25rem 0.65rem;
+    padding: 0.18rem 0.52rem;
     border: 1px solid var(--global-divider-color);
-    border-radius: 6px;
+    border-radius: 5px;
     color: var(--global-text-color);
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     text-decoration: none;
 
     &:hover {
