@@ -51,8 +51,10 @@ a.btncv:hover {
  *****************************/
 
 p.location {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
+  line-height: 1.25;
   white-space: nowrap;
+  overflow-wrap: normal;
 }
 
 i.iconlocation {
@@ -74,6 +76,75 @@ i.icondepartment {
 
 table.institution {
   margin-bottom: 1rem;
+}
+
+.cv-education-meta {
+  padding-right: 1rem;
+}
+
+.cv-education-degree {
+  margin: 0.35rem 0 0;
+  color: var(--global-text-color);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.cv-education-body {
+  padding-left: 0.75rem;
+}
+
+.cv-education-school {
+  margin-bottom: 0.25rem;
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.cv-education-school span {
+  color: var(--global-text-color-light);
+  font-size: 0.88rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.cv-education-school span::before {
+  content: " · ";
+  color: var(--global-text-color-light);
+  font-style: normal;
+}
+
+.cv-education-details {
+  margin-top: 0.3rem;
+  color: var(--global-text-color);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.cv-education-details p {
+  margin: 0.12rem 0;
+}
+
+.cv-education-detail-label {
+  color: var(--global-text-color-light);
+  font-weight: 700;
+}
+
+@media (max-width: 575px) {
+  p.location,
+  .cv-education-school {
+    white-space: normal;
+  }
+
+  .cv-education-meta {
+    padding-right: 15px;
+    text-align: left !important;
+  }
+
+  .cv-education-body {
+    padding-left: 15px;
+  }
 }
 
 td.department {

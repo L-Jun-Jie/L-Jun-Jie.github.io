@@ -68,6 +68,10 @@ def entry_title(value: str) -> str:
     return rf"\textcolor{{color1}}{{\bfseries {value}}}"
 
 
+def education_title(value: str) -> str:
+    return rf"{{\small\textcolor{{color1}}{{\bfseries {value}}}}}"
+
+
 def as_list(value: Any) -> list[Any]:
     if not value:
         return []
@@ -92,6 +96,24 @@ def date_range(entry: dict[str, Any]) -> str:
         return tex_escape(format_date(start))
     if end:
         return tex_escape(format_date(end))
+    return ""
+
+
+def education_date_range(entry: dict[str, Any]) -> str:
+    def education_date(value: Any) -> str:
+        text = strip_cjk(format_date(value))
+        if text.lower() == "present":
+            return "Present"
+        return tex_escape(text.split("-", 1)[0])
+
+    start = entry.get("start_date") or entry.get("startDate")
+    end = entry.get("end_date") or entry.get("endDate")
+    if start and end:
+        return f"{education_date(start)} -- {education_date(end)}"
+    if start:
+        return education_date(start)
+    if end:
+        return education_date(end)
     return ""
 
 
@@ -163,12 +185,27 @@ def is_research_interest(entry: Any) -> bool:
     return isinstance(entry, dict) and str(entry.get("name", "")).strip().lower() == "research"
 
 
-def advisor_from_highlights(highlights: list[Any]) -> str:
+def education_notes_from_highlights(highlights: list[Any]) -> list[str]:
+    notes: list[str] = []
     for highlight in highlights:
-        text = str(highlight).strip()
-        if text.lower().startswith("advisor:"):
-            return tex_escape(text)
-    return ""
+        text = strip_cjk(highlight)
+        if not text:
+            continue
+        lower_text = text.lower()
+        if lower_text.startswith("published:"):
+            continue
+        if lower_text.startswith("advisor:") or lower_text.startswith("research focus:"):
+            if ":" in text:
+                label, value = text.split(":", 1)
+                label = label.strip()
+                value = value.strip()
+                if value:
+                    notes.append(rf"\textbf{{{tex_escape(label)}:}} {tex_escape(value)}")
+                else:
+                    notes.append(rf"\textbf{{{tex_escape(label)}:}}")
+            else:
+                notes.append(tex_escape(text))
+    return notes
 
 
 def render_header(cv: dict[str, Any]) -> list[str]:
@@ -235,18 +272,36 @@ def render_education(entries: list[dict[str, Any]]) -> list[str]:
         if entry.get("url"):
             institution = href_raw(entry["url"], institution)
 
-        degree = join_nonempty([entry.get("studyType"), entry.get("area")], ", ")
-        advisor = advisor_from_highlights(as_list(entry.get("highlights")))
+        area = tex_escape(entry.get("area", ""))
+        school_line = institution
+        if area:
+            school_line += rf" {{\normalfont\mdseries\itshape \enspace|\enspace {area}}}"
+
+        left_lines = []
+        date = education_date_range(entry)
+        if date:
+            left_lines.append(rf"{{\bfseries {date}}}")
+        if entry.get("studyType"):
+            left_lines.append(rf"{{\itshape {tex_escape(entry['studyType'])}}}")
+        if entry.get("location"):
+            left_lines.append(rf"{{\footnotesize\mbox{{{tex_escape(entry['location'])}}}}}")
+
+        education_notes = education_notes_from_highlights(as_list(entry.get("highlights")))
+        right_lines = [education_title(school_line)]
+        right_lines.extend(rf"{{\small {note}}}" for note in education_notes)
+
         lines.extend(
             [
-                r"\noindent\begin{tabularx}{\linewidth}{@{}Xr@{}}",
-                rf"{entry_title(institution)} & {{\bfseries {tex_escape(entry.get('location', ''))}}}\\[-0.1em]",
-                rf"{{\itshape {degree}}} & {{\itshape {date_range(entry)}}}",
+                r"\noindent\begin{tabularx}{\linewidth}{@{}p{0.28\linewidth}@{\hspace{0.9em}}X@{}}",
+                r"\begin{minipage}[t]{\linewidth}\raggedright",
+                r"\\[-0.05em]".join(left_lines) if left_lines else "~",
+                r"\end{minipage} &",
+                r"\begin{minipage}[t]{\linewidth}",
+                r"\\[-0.12em]".join(right_lines),
+                r"\end{minipage}\\",
                 r"\end{tabularx}",
             ]
         )
-        if advisor:
-            lines.append(rf"{{\small {advisor}}}")
         lines.append(r"\par\vspace{0.75em}")
     return lines
 

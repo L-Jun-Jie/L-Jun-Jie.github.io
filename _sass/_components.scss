@@ -316,12 +316,11 @@ ul.task-list input[type="checkbox"] {
 
 .project-list {
   display: grid;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .project-year-group {
-  padding-top: 1rem;
-  border-top: 1px solid var(--global-divider-color);
+  padding-top: 0.2rem;
 }
 
 .project-year {
@@ -338,10 +337,10 @@ ul.task-list input[type="checkbox"] {
   gap: 0.9rem;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 0.68rem 0.85rem;
+  padding: 0.65rem 0.8rem;
   border: 1px solid var(--global-divider-color);
-  border-left: 2px solid var(--global-theme-color);
-  border-radius: 6px;
+  border-left: 3px solid var(--global-theme-color);
+  border-radius: 8px;
   background-color: var(--global-card-bg-color);
 }
 

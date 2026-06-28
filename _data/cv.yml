@@ -6,7 +6,7 @@ cv:
   image: ""
   summary: >
     Incoming Ph.D. student at Hunan University (advisor: Prof. Yufeng Zhang), currently finishing an M.Sc. at Jilin University (advisor: Associate Prof. Yong Lai).
-    Research interests include constraint solving, Satisfiability Modulo Theories (SMT), and formal methods.
+    Research interests include constraint solving, Satisfiability Modulo Theories, and formal methods.
 
   social_networks:
     - network: GitHub
@@ -30,7 +30,7 @@ cv:
         end_date: present
         highlights:
           - "Advisor: Prof. Yufeng Zhang"
-          - "Research focus: Constraint Solving, SMT"
+          - "Research focus: Satisfiability Modulo Theories, Program Analysis"
 
       - institution: Jilin University
         location: Changchun, Jilin, China
@@ -41,8 +41,7 @@ cv:
         end_date: 2026
         highlights:
           - "Advisor: Associate Prof. Yong Lai"
-          - "Research focus: SMT Sampling, Constraint Solving"
-          - "Published: SMT(LIA) Sampling with High Diversity (TACAS 2026)"
+          - "Research focus: Satisfiability Modulo Theories and Sampling"
 
       - institution: Shandong University of Technology
         location: Zibo, Shandong, China
@@ -51,8 +50,6 @@ cv:
         studyType: B.Eng.
         start_date: 2018
         end_date: 2022
-        highlights:
-          - Graduated with B.Eng. in Software Engineering
 
     Publications:
       - title: "SMT(LIA) Sampling with High Diversity"
@@ -88,7 +85,7 @@ cv:
       - name: Formal Methods & Verification
         level: Advanced
         icon: fa-solid fa-check-double
-        keywords: "SMT, Program Verification"
+        keywords: "Satisfiability Modulo Theories, Program Verification"
 
       - name: Programming Languages
         level: Proficient
@@ -110,7 +107,7 @@ cv:
     Interests:
       - name: Research
         icon: fa-solid fa-microscope
-        keywords: "SMT Solving, Constraint Sampling, Formal Methods, Program Analysis"
+        keywords: "Satisfiability Modulo Theories, Constraint Sampling, Formal Methods, Program Analysis"
 
       - name: Hobbies
         icon: fa-solid fa-heart
