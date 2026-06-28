@@ -2,6 +2,8 @@
 layout: about
 title: about
 permalink: /
+display_title: Junjie Li
+html_title: Junjie Li | Hunan University
 subtitle: >
   Incoming Ph.D. Student · <a href="https://www.hnu.edu.cn/" target="_blank">Hunan University</a> &nbsp;|&nbsp;
   M.Sc. · <a href="https://www.jlu.edu.cn/" target="_blank">Jilin University</a>
