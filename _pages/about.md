@@ -23,7 +23,6 @@ announcements:
   enabled: true
   scrollable: true
   limit: 5
-
 ---
 
 I am **Junjie Li (李浚杰)**, an incoming Ph.D. student at [Hunan University](https://www.hnu.edu.cn/), where I will be advised by Prof. [Yufeng Zhang](https://csee.hnu.edu.cn/people/zhangyufeng). I am currently completing my M.Sc. in Software Engineering at [Jilin University](https://www.jlu.edu.cn/) under the supervision of Associate Prof. [Yong Lai](https://ccst.jlu.edu.cn/info/1028/19286.htm), and previously received my B.Eng. in Software Engineering from [Shandong University of Technology](https://www.sdut.edu.cn/) in 2022.

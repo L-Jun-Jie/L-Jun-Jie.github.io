@@ -34,18 +34,18 @@
             <tbody>
               {% assign study_type = study_type | strip %}
               {% if date %}
-              <tr>
-                <td>
-                  <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">{{ date }}</span>
-                </td>
-              </tr>
+                <tr>
+                  <td>
+                    <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">{{ date }}</span>
+                  </td>
+                </tr>
               {% endif %}
               {% if study_type != '' %}
-              <tr>
-                <td>
-                  <p class="cv-education-degree">{{ study_type }}</p>
-                </td>
-              </tr>
+                <tr>
+                  <td>
+                    <p class="cv-education-degree">{{ study_type }}</p>
+                  </td>
+                </tr>
               {% endif %}
               {% capture location %}
                 {% if entry.location %}{{ entry.location }}{% endif %}
@@ -88,7 +88,9 @@
                 {% if item_text contains ':' %}
                   {% assign item_label = item_text | split: ':' | first | strip %}
                   {% assign item_value = item_text | remove_first: item_label | remove_first: ':' | strip %}
-                  <p><span class="cv-education-detail-label">{{ item_label }}:</span> {{ item_value }}</p>
+                  <p>
+                    <span class="cv-education-detail-label">{{ item_label }}:</span> {{ item_value }}
+                  </p>
                 {% else %}
                   <p>{{ item_text }}</p>
                 {% endif %}

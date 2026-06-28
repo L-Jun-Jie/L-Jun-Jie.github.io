@@ -277,6 +277,14 @@ ul.task-list input[type="checkbox"] {
 
 // Projects
 
+.projects-page {
+  .post-header {
+    border-bottom: 1px solid var(--global-divider-color);
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
 .projects {
   a {
     text-decoration: none;
