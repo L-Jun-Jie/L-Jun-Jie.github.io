@@ -19,8 +19,9 @@ LABEL authors="Amir Pourmand,George Araújo" \
 # RUN groupadd -r $GROUPNAME -g $GROUPID && \
 #     useradd -u $USERID -m -g $GROUPNAME $USERNAME
 
-# install system dependencies
-RUN apt-get update -y && \
+# use a mainland China mirror and install system dependencies
+RUN sed -i 's|http://deb.debian.org|https://mirrors.tuna.tsinghua.edu.cn|g' /etc/apt/sources.list.d/debian.sources && \
+    apt-get update -y && \
     apt-get install -y --no-install-recommends \
         build-essential \
         curl \
@@ -31,8 +32,11 @@ RUN apt-get update -y && \
         nodejs \
         procps \
         python3-pip \
-        zlib1g-dev && \
-    pip --no-cache-dir install --upgrade --break-system-packages nbconvert
+        zlib1g-dev
+
+RUN pip --no-cache-dir install --upgrade --break-system-packages \
+        -i https://pypi.tuna.tsinghua.edu.cn/simple \
+        nbconvert
 
 # clean up
 RUN apt-get clean && \
@@ -53,16 +57,18 @@ ENV EXECJS_RUNTIME=Node \
 # create a directory for the jekyll site
 RUN mkdir /srv/jekyll
 
-# copy the Gemfile and Gemfile.lock to the image
-ADD Gemfile.lock /srv/jekyll
-ADD Gemfile /srv/jekyll
+# copy the Gemfile and, when present, Gemfile.lock to the image
+COPY Gemfile* /srv/jekyll/
 
 # set the working directory
 WORKDIR /srv/jekyll
 
 # install jekyll and dependencies
-RUN gem install --no-document jekyll bundler
-RUN bundle install --no-cache
+RUN gem sources --add https://gems.ruby-china.com/ && \
+    gem sources --remove https://rubygems.org/ && \
+    gem install --no-document jekyll bundler
+RUN bundle config set --global mirror.https://rubygems.org https://gems.ruby-china.com && \
+    bundle install --no-cache
 
 EXPOSE 8080
 

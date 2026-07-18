@@ -13,9 +13,13 @@ manage_gemfile_lock() {
             echo "Gemfile.lock is tracked by git, keeping it intact"
             git restore Gemfile.lock 2>/dev/null || true
         else
-            echo "Gemfile.lock is not tracked by git, removing it"
-            rm Gemfile.lock
+            echo "Gemfile.lock is not tracked by git, keeping the local copy"
         fi
+    fi
+
+    if ! bundle check; then
+        echo "Ruby dependencies are incomplete; running bundle install"
+        bundle install
     fi
 }
 

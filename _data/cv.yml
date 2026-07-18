@@ -1,11 +1,11 @@
 cv:
   name: Junjie Li
-  label: Ph.D. Student (Incoming)
+  label: Ph.D. Student
   email: junjieli2026@gmail.com
   location: Changsha, Hunan, China
   image: ""
   summary: >
-    Incoming Ph.D. student at Hunan University (advisor: Prof. Yufeng Zhang), currently finishing an M.Sc. at Jilin University (advisor: Associate Prof. Yong Lai).
+    Ph.D. student at Hunan University (advisor: Prof. Yufeng Zhang), with an M.Sc. from Jilin University (advisor: Associate Prof. Yong Lai).
     Research interests include constraint solving, Satisfiability Modulo Theories, and formal methods.
 
   social_networks:
@@ -24,8 +24,8 @@ cv:
       - institution: Hunan University
         location: Changsha, Hunan, China
         url: https://www.hnu.edu.cn/
-        area: Electronic Information
-        studyType: Ph.D. (Incoming)
+        area: Computer Science
+        studyType: Ph.D.
         start_date: 2026-09
         end_date: present
         highlights:
