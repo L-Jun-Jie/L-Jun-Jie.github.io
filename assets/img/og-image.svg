@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Junjie Li</title>
+  <desc id="description">Formal methods and software engineering researcher at Hunan University.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc" />
+      <stop offset="1" stop-color="#eef2ff" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb" />
+      <stop offset="1" stop-color="#7c3aed" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#background)" />
+  <circle cx="1090" cy="-10" r="270" fill="#dbeafe" opacity="0.72" />
+  <circle cx="1135" cy="570" r="210" fill="#ede9fe" opacity="0.78" />
+  <rect x="72" y="72" width="10" height="486" rx="5" fill="url(#accent)" />
+
+  <g font-family="DejaVu Sans, Arial, sans-serif" fill="#0f172a">
+    <text x="132" y="215" font-size="76" font-weight="700" letter-spacing="-2">Junjie Li</text>
+    <text x="136" y="278" font-size="31" font-weight="500" fill="#334155">Ph.D. Student · Hunan University</text>
+    <text x="136" y="386" font-size="35" font-weight="600">Formal Methods · Software Engineering</text>
+    <text x="136" y="468" font-size="25" fill="#475569">SMT · Constraint Solving · Program Analysis</text>
+    <text x="136" y="532" font-size="21" font-weight="500" fill="#2563eb">L-Jun-Jie.github.io</text>
+  </g>
+
+  <g transform="translate(930 220)">
+    <rect width="150" height="150" rx="38" fill="url(#accent)" />
+    <text x="75" y="101" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="67" font-weight="700" fill="#ffffff">JL</text>
+  </g>
+</svg>

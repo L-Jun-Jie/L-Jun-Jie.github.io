@@ -11,21 +11,21 @@ ninja.data = [{
     },
   },{id: "nav-publications",
           title: "Publications",
-          description: "",
+          description: "Publications by Junjie Li on satisfiability modulo theories, constraint solving, and software verification.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
         },{id: "nav-projects",
           title: "Projects",
-          description: "",
+          description: "Research software by Junjie Li for constraint solving, formal methods, and diverse solution sampling.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "",
+          description: "Curriculum vitae of Junjie Li, Ph.D. student at Hunan University working on formal methods and software engineering.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -39,11 +39,11 @@ ninja.data = [{
           section: "News",},{id: "news-excited-to-share-that-i-have-been-admitted-as-a-ph-d-student-at-hunan-university-starting-september-2026-advised-by-prof-yufeng-zhang-looking-forward-to-the-next-chapter",
           title: 'Excited to share that I have been admitted as a Ph.D. student at...',
           description: "",
-          section: "News",},{id: "projects-eda-sampling",
-          title: 'EDA Sampling',
-          description: "A BDD-based sampling tool for SystemVerilog constraints.",
+          section: "News",},{id: "projects-bddsampler",
+          title: 'BDDSampler',
+          description: "A C++ command-line tool for uniformly sampling satisfying assignments from bit-vector constraints using BDDs.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/eda_sampling/";
+              window.location.href = "/projects/bddsampler/";
             },},{id: "projects-highdiv",
           title: 'HighDiv',
           description: "An SMT(LIA) sampler for high-diversity solutions.",
