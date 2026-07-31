@@ -8,6 +8,7 @@ html_title: Junjie Li | Hunan University
 profile:
   align: right
   image: me.jpg
+  alt: Portrait of Junjie Li
   image_circular: false
   more_info: >
     <p>Changsha, Hunan, China</p>

@@ -104,7 +104,7 @@ def education_date_range(entry: dict[str, Any]) -> str:
         text = strip_cjk(format_date(value))
         if text.lower() == "present":
             return "Present"
-        return tex_escape(text.split("-", 1)[0])
+        return tex_escape(text)
 
     start = entry.get("start_date") or entry.get("startDate")
     end = entry.get("end_date") or entry.get("endDate")
@@ -531,23 +531,29 @@ def build_tex(cv: dict[str, Any]) -> str:
 
 def compile_pdf(tex_path: Path, pdf_path: Path) -> None:
     latexmk = shutil.which("latexmk")
-    if not latexmk:
-        raise RuntimeError("latexmk is required to generate the PDF.")
+    tectonic = shutil.which("tectonic")
+    if not latexmk and not tectonic:
+        raise RuntimeError("latexmk or tectonic is required to generate the PDF.")
 
     with tempfile.TemporaryDirectory(prefix="cv-latex-") as tmp_dir_name:
         tmp_dir = Path(tmp_dir_name)
         tmp_tex = tmp_dir / tex_path.name
         shutil.copy2(tex_path, tmp_tex)
 
-        result = subprocess.run(
-            [
+        if latexmk:
+            command = [
                 latexmk,
                 "-xelatex",
                 "-interaction=nonstopmode",
                 "-halt-on-error",
                 "-file-line-error",
                 tmp_tex.name,
-            ],
+            ]
+        else:
+            command = [tectonic, "--outdir", str(tmp_dir), "--keep-logs", tmp_tex.name]
+
+        result = subprocess.run(
+            command,
             cwd=tmp_dir,
             text=True,
             capture_output=True,

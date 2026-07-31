@@ -74,7 +74,12 @@
 {% elsif site.icon != blank %}
   <link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url | bust_file_cache}}">
 {% endif %}
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
+{% assign main_css_version = site.github.build_revision %}
+{% unless main_css_version %}
+  {% assign main_css_version = site.time | date: '%s' %}
+{% endunless %}
+{% assign main_css_url = '/assets/css/main.css' | relative_url | append: '?v=' | append: main_css_version %}
+<link rel="stylesheet" href="{{ main_css_url }}">
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
 {% if site.enable_darkmode %}

@@ -2,7 +2,7 @@
 layout: page
 permalink: /cv/pdf/
 title: CV PDF
-description:
+description: PDF curriculum vitae of Junjie Li.
 nav: false
 ---
 

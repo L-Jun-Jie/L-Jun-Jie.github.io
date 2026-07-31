@@ -73,13 +73,14 @@ cv:
           - "Integrates CDCL(T) with local search for high-diversity SMT(LIA) sampling."
           - "Introduces a boundary-aware move operator to balance scalability and randomness."
 
-      - name: EDA Sampling
-        url: https://github.com/laigroup/EDA_Sampling
+      - name: BDDSampler
+        url: https://github.com/L-Jun-Jie/BDDSampler
         start_date: 2023
-        end_date: 2024
-        summary: "A BDD-based sampling tool for SystemVerilog constraints."
+        end_date: present
+        summary: "A C++ command-line tool for uniform sampling of satisfying assignments from bit-vector constraints using BDDs."
         highlights:
-          - "Builds BDDs for SystemVerilog constraints and samples satisfying assignments from the resulting solution space."
+          - "Parses bit-vector constraints from JSON and represents their satisfying assignments with BDDs."
+          - "Uses exact model counting to sample satisfying assignments uniformly."
 
     Skills:
       - name: Formal Methods & Verification
